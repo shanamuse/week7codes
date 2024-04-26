@@ -1,0 +1,48 @@
+For example:
+
+Input	Result
+16
+Enter a whole number:
+1
+2
+Fizz
+4
+Buzz
+Fizz
+7
+8
+Fizz
+Buzz
+11
+Fizz
+13
+14
+FizzBuzz
+16
+
+
+
+
+
+#include <stdio.h>
+
+int main(void) {
+    int n;
+
+    printf("Enter a whole number:\n");
+    scanf("%d", &n);
+
+    for (int i = 1; i <= n; i++) {
+        if (i % 3 == 0 && i % 5 == 0) {
+            printf("FizzBuzz\n");
+        } else if (i % 3 == 0) {
+            printf("Fizz\n");
+        } else if (i % 5 == 0) {
+            printf("Buzz\n");
+        } else {
+            printf("%d\n", i);
+        }
+    }
+
+    return 0;
+}
