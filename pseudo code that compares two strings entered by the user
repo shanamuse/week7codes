@@ -1,0 +1,33 @@
+For example:
+
+Input	Result
+mountains
+mountains 
+Input a word:
+Input another word:
+The words are identical!
+
+
+
+
+#include <stdio.h>
+#include <string.h>
+
+int main() {
+    char first_word[100]; 
+    char second_word[100]; 
+    
+    printf("Input a word:\n");
+    scanf("%s", first_word);
+    
+    printf("Input another word:\n");
+    scanf("%s", second_word);
+
+    if (strcmp(first_word, second_word) == 0) {
+        printf("The words are identical!\n");
+    } else {
+        printf("The words are different!\n");
+    }
+    
+    return 0;
+}
