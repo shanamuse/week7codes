@@ -1,0 +1,38 @@
+For example:
+
+Input	Result
+5
+Enter a number:
+    #
+   ##
+  ###
+ ####
+#####
+
+
+
+
+
+#include <stdio.h>
+
+int main() {
+    int number;
+
+    printf("Enter a number:\n");
+    scanf("%d", &number);
+
+    // Outer loop for rows
+    for (int i = 1; i <= number; i++) {
+        // Inner loop for spaces
+        for (int j = 1; j <= number - i; j++) {
+            printf(" ");
+        }
+        // Inner loop for printing '#' characters
+        for (int k = 1; k <= i; k++) {
+            printf("#");
+        }
+        printf("\n");
+    }
+
+    return 0;
+}
