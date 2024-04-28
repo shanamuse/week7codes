@@ -13,9 +13,7 @@ apple is fruit.
 #include <string.h>
 
 int main() {
-    char input[20]; // Assuming input won't exceed 20 characters
-
-    // List of known fruits and vegetables
+    char input[20];
     char *fruits[] = {"apple", "banana", "orange", "melon", "tomato"};
     char *vegetables[] = {"broccoli", "carrot", "onion", "potato", "spinach"};
 
@@ -24,7 +22,6 @@ int main() {
     while (1) {
         scanf("%s", input);
 
-        // Check if input matches any known fruit
         for (int i = 0; i < 5; i++) {
             if (strcmp(input, fruits[i]) == 0) {
                 printf("%s is fruit.\n", input);
@@ -32,7 +29,6 @@ int main() {
             }
         }
 
-        // Check if input matches any known vegetable
         for (int i = 0; i < 5; i++) {
             if (strcmp(input, vegetables[i]) == 0) {
                 printf("%s is vegetable.\n", input);
@@ -40,7 +36,6 @@ int main() {
             }
         }
 
-        // If input does not match any known fruit or vegetable
         printf("%s is not a fruit or vegetable, try again:\n", input);
     }
 
