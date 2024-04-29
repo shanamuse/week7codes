@@ -1,0 +1,54 @@
+For example:
+
+Input	Result
+Red
+Blue
+First colour?
+Second colour?
+
+Red and Blue mix to make Violet
+
+
+
+
+
+#include <string.h>
+
+int main() {
+    char first_colour[10], second_colour[10], result[10];
+    
+    printf("First colour?\n");
+    scanf("%s", first_colour);
+    
+    if (strcmp(first_colour, "Yellow") != 0 && strcmp(first_colour, "Red") != 0 && strcmp(first_colour, "Blue") != 0) {
+        printf("\n%s is not a valid primary colour!!!\n", first_colour);
+        printf("\nFirst colour?\n");
+        scanf("%s", first_colour);
+    }
+    
+    printf("Second colour?\n");
+    scanf("%s", second_colour);
+    
+    if (strcmp(second_colour, "Yellow") != 0 && strcmp(second_colour, "Red") != 0 && strcmp(second_colour, "Blue") != 0) {
+        printf("\n%s is not a valid primary colour!!!\n", second_colour);
+        printf("\nSecond colour?\n");
+        scanf("%s", second_colour);
+    }
+    
+    if (strcmp(first_colour, second_colour) == 0) {
+        printf("\n%s and %s mix to make %s", first_colour, first_colour, first_colour);
+    } else {
+        if ((strcmp(first_colour, "Yellow") == 0 && strcmp(second_colour, "Red") == 0) ||
+            (strcmp(first_colour, "Red") == 0 && strcmp(second_colour, "Yellow") == 0)) {
+            strcpy(result, "Orange");
+        } else if ((strcmp(first_colour, "Red") == 0 && strcmp(second_colour, "Blue") == 0) ||
+                   (strcmp(first_colour, "Blue") == 0 && strcmp(second_colour, "Red") == 0)) {
+            strcpy(result, "Violet");
+        } else if ((strcmp(first_colour, "Blue") == 0 && strcmp(second_colour, "Yellow") == 0) ||
+                   (strcmp(first_colour, "Yellow") == 0 && strcmp(second_colour, "Blue") == 0)) {
+            strcpy(result, "Green");
+        }
+        printf("\n%s and %s mix to make %s\n", first_colour, second_colour, result);
+    }
+
+}
