@@ -1,0 +1,81 @@
+For example:
+
+Input	Result
+N
+N
+N
+N
+N
+W
+W
+W
+W
+S
+S
+q
+The player starts at (0, 0)...
+Player at (0, 0) - move N,S,E,W (q to quit)?
+Player at (0, 1) - move N,S,E,W (q to quit)?
+Player at (0, 2) - move N,S,E,W (q to quit)?
+Player at (0, 3) - move N,S,E,W (q to quit)?
+Player at (0, 4) - move N,S,E,W (q to quit)?
+Player at (0, 5) - move N,S,E,W (q to quit)?
+Player at (-1, 5) - move N,S,E,W (q to quit)?
+Player at (-2, 5) - move N,S,E,W (q to quit)?
+Player at (-3, 5) - move N,S,E,W (q to quit)?
+Player at (-4, 5) - move N,S,E,W (q to quit)?
+Player at (-4, 4) - move N,S,E,W (q to quit)?
+Player at (-4, 3) - move N,S,E,W (q to quit)?
+The player ends at (-4, 3)
+
+
+
+
+
+
+#include <stdio.h>
+int main (void)
+{
+    int x = 0;
+    int y = 0;
+    char input;
+
+
+    printf("The player starts at (0, 0)...\n");
+
+    while (1) {
+        
+        printf("Player at (%d, %d) - move N,S,E,W (q to quit)?\n", x, y);
+        scanf(" %c", &input);
+        
+     if (input == 'q') {
+        printf("The player ends at (%d, %d)\n", x, y);
+        break;    
+    }
+    
+     switch (input) {
+            case 'N':
+            case 'n':
+                y++;
+                break;
+            case 'S':
+            case 's':
+                y--;
+                break;
+            case 'E':
+            case 'e':
+                x++;
+                break;
+            case 'W':
+            case 'w':
+                x--;
+                break;
+            default:
+                printf("\nInvalid input. Please enter N, S, E, W, or q to quit.\n");
+        }
+        
+    }
+    
+    return 0;
+}
+    
