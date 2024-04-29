@@ -1,0 +1,57 @@
+For example:
+
+Input	Result
+mountains
+mountains 
+Input a word:
+Input another word:
+The words are identical!
+
+
+
+
+#include <stdio.h>
+
+int main() {
+    char first_word[100], second_word[100];
+    
+    printf("Input a word:\n");
+    scanf("%s", first_word);
+    
+    printf("Input another word:\n");
+    scanf("%s", second_word);
+    
+    int first_length = 0;
+    int count = 0;
+    while (first_word[count] != '\0') {
+        first_length++;
+        count++;
+    }
+    
+    int second_length = 0;
+    count = 0;
+    while (second_word[count] != '\0') {
+        second_length++;
+        count++;
+    }
+    
+    int match = 1;
+    if (first_length == second_length) {
+        for (int i = 0; i < first_length; i++) {
+            if (first_word[i] != second_word[i]) {
+                match = 0;
+                break;
+            }
+        }
+    } else {
+        match = 0;
+    }
+    
+    if (match == 1) {
+        printf("The words are identical!\n");
+    } else {
+        printf("The words are different!\n");
+    }
+    
+    return 0;
+}
