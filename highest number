@@ -1,0 +1,52 @@
+For example:
+
+Input	Result
+23
+55
+78
+55
+34
+0
+Enter a number (0 to quit):
+Enter a number (0 to quit):
+Enter a number (0 to quit):
+Enter a number (0 to quit):
+Enter a number (0 to quit):
+
+
+
+
+
+
+#include <stdio.h>
+
+int main() {
+    int highest = -2147483648; 
+    int number;
+    int hasNumbers = 0; 
+
+    printf("Enter a number (0 to quit):\n");
+
+    while (1) {
+        scanf("%d", &number);
+
+        if (number > highest && number != 0) {
+            highest = number;
+            hasNumbers = 1; 
+        }
+
+        if (number == 0) {
+            break;
+        }
+
+        printf("Enter a number (0 to quit):\n");
+    }
+
+    if (!hasNumbers) {
+        printf("\nNo numbers entered!\n");
+    } else {
+        printf("\nThe highest number was %d.\n", highest);
+    }
+
+    return 0;
+}
